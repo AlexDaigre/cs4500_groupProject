@@ -83,6 +83,11 @@ def custom_objects(robot: cozmo.robot.Robot):
         global backward
         robot.set_head_angle(degrees(-25)).wait_for_completed()
         print(forward)
+        
+        #The robot.drive_straght(distance_mm(###) can be modified for different sized boards or for troubleshooting
+        #measurements.
+        #Keep in mind that the distance forward is different for driving forward and the turning.
+        
         #DIAMOND/RIGHT TURN
         if right_turn:
             robot.drive_straight(distance_mm(135), speed_mmps(100)).wait_for_completed()

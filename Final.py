@@ -46,6 +46,8 @@ def handle_object_appeared(evt, **kw):
 def custom_objects(robot: cozmo.robot.Robot):
     robot.add_event_handler(cozmo.objects.EvtObjectAppeared, handle_object_appeared)
 
+    #More objects can be added by copying the below sections, and changing the "CustomType##" and "CustomObjectMarkers.SHAPE"
+    #to whatever pre-recognized shape in the Cozmo directory.
     wall_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType02,
                                               CustomObjectMarkers.Circles2,
                                               140, 130, #65 by 65 originally
@@ -101,6 +103,11 @@ def custom_objects(robot: cozmo.robot.Robot):
             robot.set_head_angle(degrees(-25))
             time.sleep(0.5)
 
+        #ADDIONAL OBJECT ACTIONS ADD HERE:
+        
+        
+        #################################
+            
         #HEXAGON/STOP
         elif backward:
             break
